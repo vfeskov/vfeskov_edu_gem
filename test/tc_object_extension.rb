@@ -1,13 +1,8 @@
 require "test/unit"
 require File.expand_path('../../lib/vfeskov_edu_gem', __FILE__)
+require File.expand_path("../common/test_object", __FILE__)
 
 class TestObjectExtension < Test::Unit::TestCase
-
-  class TestObject
-    attr_accessor :property1
-    attr_accessor :property2
-    attr_accessor :property3
-  end
 
   def test_array
     assert_equal('["123456","test string","test string 2"]', [123456,"test string","test string 2"].to_json )
@@ -33,6 +28,5 @@ class TestObjectExtension < Test::Unit::TestCase
 
     assert_equal('{"property1":[{"property1":"123","property2":"test string","property3":["123","test string","234"]},"asd"],"property2":["213","342","564"]}', t2.to_json)
   end
-
 
 end
